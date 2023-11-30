@@ -5,7 +5,9 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/kaneplusplus/bis620.2023/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kaneplusplus/bis620.2023/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/HouminXing/bis620.2022/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/HouminXing/bis620.2022/actions/workflows/R-CMD-check.yaml)
+[![test-coverage](https://github.com/HouminXing/bis620.2022/actions/workflows/test-coverage.yaml/badge.svg)](https://github.com/HouminXing/bis620.2022/actions/workflows/test-coverage.yaml)
+[![lint](https://github.com/HouminXing/bis620.2022/actions/workflows/lint.yaml/badge.svg)](https://github.com/HouminXing/bis620.2022/actions/workflows/lint.yaml)
 <!-- badges: end -->
 
 The goal of bis620.2023 is to …

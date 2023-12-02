@@ -7,6 +7,7 @@
 #' @param sponsor_type A variable representing the sponsor type to filter by. Default is 1.
 #' @param status_type A variable representing the status type to filter by. Default is 1.
 #' @param kw A keyword to search for in study titles.
+#' @importFrom dplyr filter collect
 #' @return A filtered dataset of studies matching the specified criteria.
 title_kw_search = function(studies, sponsor_type, status_type, kw) {
   x = query_kwds(studies, kw, "brief_title", match_all = TRUE) |> collect()

@@ -13,7 +13,10 @@
 #' @param status_type The status of studies to be included in the chart.
 #' @param brief_title_kw Keyword(s) for filtering studies by their brief titles.
 #' If this parameter is empty, only the first 1000 studies are considered.
-#'
+#' @importFrom dplyr collect filter mutate group_by summarize arrange desc
+#' @importFrom ggplot2 ggplot geom_bar coord_polar theme_void labs
+#' @importFrom forcats fct_lump_prop
+#' @importFrom utils head
 #' @return A ggplot object representing the pie chart for the interventions of
 #' the filtered studies.
 create_interventions_pie_chart = function(studies, interventions, sponsor_type, status_type, brief_title_kw){

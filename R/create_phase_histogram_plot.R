@@ -6,6 +6,9 @@
 #' @param sponsor_type A variable representing the sponsor type to filter by. Default is 1.
 #' @param status_type A variable representing the status type to filter by. Default is 1.
 #' @param brief_title_kw A keyword to search for in study titles. Default is an empty string.
+#' @importFrom dplyr select group_by summarize
+#' @importFrom ggplot2 ggplot geom_col theme_bw xlab ylab
+#' @importFrom utils head
 #' @return A histogram plot showing the distribution of study phases based on the specified criteria.
 create_phase_histogram_plot = function(studies, sponsor_type, status_type, brief_title_kw) {
   if (brief_title_kw == ""){

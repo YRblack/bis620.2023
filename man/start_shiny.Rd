@@ -11,5 +11,9 @@ A shiny app that allows us to explore the contents in the
 "ctgov" trials database.
 }
 \description{
+This function starts a shiny app in which we use the "ctgov" trials database
+to create visualizations and conduct data analysis.
+}
+\details{
 Call Our Shiny App as a Function
 }

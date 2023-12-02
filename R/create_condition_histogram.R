@@ -7,6 +7,10 @@
 #' @param sponsor_type A variable representing the sponsor type to filter by. Default is 1.
 #' @param status_type A variable representing the status type to filter by. Default is 1.
 #' @param brief_title_kw A keyword to search for in study titles. Default is an empty string.
+#' @importFrom dplyr filter group_by mutate summarize arrange
+#' @importFrom ggplot2 ggplot geom_col theme_bw theme scale_y_log10 xlab ylab element_text
+#' @importFrom forcats fct_lump_prop
+#' @importFrom utils head
 #' @return A histogram plot showing the distribution of study conditions based on the specified criteria.
 create_condition_histogram = function(studies, conditions, sponsor_type, status_type, brief_title_kw) {
   if (brief_title_kw == ""){

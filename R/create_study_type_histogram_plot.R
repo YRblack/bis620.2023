@@ -2,7 +2,7 @@
 #'
 #' @description
 #' This feature generates the histogram and enables subsetting of the data based on various study types.
-#' There are five distinct study types: Observational, Observational [Patient Registry], Interventional, Expanded access, unknown.
+#' There are five distinct study types: Observational, Observational-Patient Registry, Interventional, Expanded access, unknown.
 #' The "unknown" types showed as "NA" in the histogram.
 #' By showing the frequency of each study type, researchers can perform comparative analyses to understand how different types of studies contribute to the field.
 #' For instance, if interventional studies are more common than observational ones, it may reflect a research trend or indicate where more resources are being allocated.
@@ -13,7 +13,9 @@
 #' @param sponsor_type The type of sponsor for the studies to be included in the plot.
 #' @param status_type The type of status of the studies to be included in the plot.
 #' @param brief_title_kw A keyword to filter the studies.
-#'
+#' @importFrom dplyr select group_by summarize
+#' @importFrom ggplot2 ggplot geom_col theme_bw xlab ylab
+#' @importFrom utils head
 #' @return A ggplot object representing the histogram of the number of studies by study type.
 create_study_type_histogram_plot = function(studies, sponsor_type, status_type, brief_title_kw) {
   if (brief_title_kw == ""){

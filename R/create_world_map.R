@@ -10,6 +10,11 @@
 #' @param brief_title_kw Keyword(s) for filtering studies by their brief titles.
 #' If this parameter is empty, only the first 1000 studies are considered.
 #' @param countries the 'countries' data frame in our ctgov database
+#' @importFrom dplyr collect filter group_by summarise n
+#' @importFrom countrycode countrycode
+#' @importFrom rworldmap joinCountryData2Map mapCountryData
+#' @importFrom graphics par
+#' @importFrom utils head
 #' @returns Displays a world map showing the distribution of clinical trial counts (in log10 scale) based on specified filters.
 create_world_map = function(studies, sponsor_type, status_type, brief_title_kw, countries) {
   if (brief_title_kw == ""){

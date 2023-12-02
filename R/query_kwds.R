@@ -7,6 +7,7 @@
 #' @param column The name of the column in the dataset to perform the search.
 #' @param ignore_case (Optional) A logical value indicating whether the search should be case-insensitive. Default is TRUE.
 #' @param match_all (Optional) A logical value indicating whether all keywords must match (AND) or any keyword can match (OR). Default is FALSE.
+#' @importFrom dplyr filter sql
 #' @return A filtered dataset based on the constructed SQL query.
 query_kwds <- function(tbl, kwds, column, ignore_case = TRUE, match_all = FALSE) {
   kwds <- paste0("%", kwds, "%") |>

@@ -1,29 +1,24 @@
 #' Call Our Shiny App as a Function
 #'
 #' @title start_shiny
+#' @description
+#' This function starts a shiny app in which we use the "ctgov" trials database
+#' to create visualizations and conduct data analysis.
+#' @importFrom ctrialsgov ctgov_get_latest_snapshot ctgov_load_duckdb_file
+#' @importFrom ctrialsgov ctgov_query_endpoint
+#' @importFrom DBI dbConnect
+#' @importFrom duckdb duckdb
+#' @importFrom dplyr tbl select rename
+#' @importFrom shiny shinyApp fluidPage titlePanel sidebarLayout sidebarPanel
+#' @importFrom shiny textInput selectInput mainPanel tabsetPanel tabPanel
+#' @importFrom shiny plotOutput renderPlot h3 h5
+#' @importFrom wordcloud2 wordcloud2Output renderWordcloud2
+#' @importFrom DT renderDataTable dataTableOutput
+#' @importFrom utils head
 #' @returns A shiny app that allows us to explore the contents in the
 #'          "ctgov" trials database.
 #' @export
 start_shiny = function() {
-  # simply follow the content in "ui.R" and "server.R"
-  require(shiny)
-  library(duckdb)
-  library(dplyr)
-  library(DBI)
-  library(DT)
-  library(ggplot2)
-  library(ctrialsgov)
-  library(forcats)
-
-  # libraries needed for drawing word cloud plot
-  library(wordcloud)
-  library(RColorBrewer)
-  library(wordcloud2)
-  library(tm)
-
-  # library needed for drawing a world map
-  library(countrycode)
-  library(rworldmap)
 
   # download the latest database snapshot
   ctrialsgov::ctgov_get_latest_snapshot(db_path = "ctgov.duckdb",
@@ -36,7 +31,6 @@ start_shiny = function() {
       read_only = TRUE
     )
   )
-  dbListTables(con)
   studies = tbl(con, "studies")
   conditions = tbl(con, "conditions")
   interventions = tbl(con, "interventions")

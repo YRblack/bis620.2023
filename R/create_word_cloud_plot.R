@@ -10,6 +10,11 @@
 #' @param status_type the specified status type for studies filtering
 #' @param brief_title_kw Keyword(s) for filtering studies by their brief titles.
 #' If this parameter is empty, only the first 1000 studies are considered.
+#' @importFrom dplyr select
+#' @importFrom tm Corpus VectorSource tm_map content_transformer stopwords
+#' @importFrom tm TermDocumentMatrix
+#' @importFrom wordcloud2 wordcloud2
+#' @importFrom utils head
 #' @returns Displays a word cloud plot representing the frequency of words
 #' in the brief titles of the filtered clinical trials.
 create_word_cloud_plot = function(studies, sponsor_type, status_type, brief_title_kw){
@@ -24,9 +29,9 @@ create_word_cloud_plot = function(studies, sponsor_type, status_type, brief_titl
   # Create a corpus
   docs <- Corpus(VectorSource(text))
   # clean texts data
-  docs <- docs %>%
-    tm_map(removeNumbers) %>%
-    tm_map(removePunctuation) %>%
+  docs <- docs |>
+    tm_map(removeNumbers) |>
+    tm_map(removePunctuation) |>
     tm_map(stripWhitespace)
   docs <- tm_map(docs, content_transformer(tolower))
   docs <- tm_map(docs, removeWords, stopwords("english"))

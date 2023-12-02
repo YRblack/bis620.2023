@@ -7,6 +7,9 @@
 #' @param sponsor_type A variable representing the sponsor type to filter by. By default, it considers all sponsor types (sponsor_type = 1), but you can specify a specific sponsor type to focus the analysis.
 #' @param status_type A variable representing the status type to filter by. By default, it considers all status types (status_type = 1), but you can specify a specific status type to narrow down the analysis.
 #' @param brief_title_kw A keyword to search for in study titles. The default is an empty string, enabling you to further refine the analysis by focusing on studies with specific keywords in their titles.
+#' @importFrom dplyr mutate group_by summarise
+#' @importFrom ggplot2 ggplot geom_col theme_bw theme scale_y_log10 xlab ylab
+#' @importFrom utils head
 #' @return A histogram plot that visualizes the distribution of study start years based on the specified criteria. The plot helps in understanding the historical trend of clinical studies and can reveal patterns related to specific sponsor types or status types.
 create_start_year_histogram_plot = function(studies, sponsor_type, status_type, brief_title_kw) {
   if (brief_title_kw == ""){

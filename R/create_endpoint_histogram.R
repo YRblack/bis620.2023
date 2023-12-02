@@ -7,6 +7,8 @@
 #' @param status_type A variable representing the status type to filter by. Default is 1.
 #' @param endpoints A dataset of endpoints to join with the studies' data.
 #' @param kw A keyword to search for in study titles. Default is an empty string.
+#' @importFrom dplyr select collect filter left_join group_by summarize
+#' @importFrom ggplot2 ggplot geom_col scale_y_log10 theme_bw
 #' @return A histogram plot displaying the distribution of endpoints met in studies based on the specified criteria.
 create_endpoint_histogram = function(studies, sponsor_type, status_type, endpoints, kw) {
 

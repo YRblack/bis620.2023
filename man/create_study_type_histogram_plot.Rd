@@ -25,7 +25,7 @@ A ggplot object representing the histogram of the number of studies by study typ
 }
 \description{
 This feature generates the histogram and enables subsetting of the data based on various study types.
-There are five distinct study types: Observational, Observational \link{Patient Registry}, Interventional, Expanded access, unknown.
+There are five distinct study types: Observational, Observational-Patient Registry, Interventional, Expanded access, unknown.
 The "unknown" types showed as "NA" in the histogram.
 By showing the frequency of each study type, researchers can perform comparative analyses to understand how different types of studies contribute to the field.
 For instance, if interventional studies are more common than observational ones, it may reflect a research trend or indicate where more resources are being allocated.

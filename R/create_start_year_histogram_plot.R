@@ -21,6 +21,7 @@ create_start_year_histogram_plot = function(studies, sponsor_type, status_type, 
   }
 
   d |>
+    mutate(start_date = as.Date(start_date)) |>
     mutate(start_year = format(start_date,"%Y"))  |>
     group_by(start_year) |>
     summarise(n = n()) |>

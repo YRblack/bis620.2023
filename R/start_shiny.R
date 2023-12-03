@@ -4,10 +4,6 @@
 #' @description
 #' This function starts a shiny app in which we use the "ctgov" trials database
 #' to create visualizations and conduct data analysis.
-#' @importFrom ctrialsgov ctgov_get_latest_snapshot ctgov_load_duckdb_file
-#' @importFrom ctrialsgov ctgov_query_endpoint
-#' @importFrom DBI dbConnect
-#' @importFrom duckdb duckdb
 #' @importFrom dplyr tbl select rename
 #' @importFrom shiny shinyApp fluidPage titlePanel sidebarLayout sidebarPanel
 #' @importFrom shiny textInput selectInput mainPanel tabsetPanel tabPanel
@@ -19,26 +15,6 @@
 #'          "ctgov" trials database.
 #' @export
 start_shiny = function() {
-
-  # download the latest database snapshot
-  ctrialsgov::ctgov_get_latest_snapshot(db_path = "ctgov.duckdb",
-                                        db_derived_path = "ctgov-derived.duckdb")
-
-  con = dbConnect(
-    duckdb(
-      # need to change file path
-      file.path("ctgov.duckdb"),
-      read_only = TRUE
-    )
-  )
-  studies = tbl(con, "studies")
-  conditions = tbl(con, "conditions")
-  interventions = tbl(con, "interventions")
-  countries = tbl(con, "countries")
-
-  # need to change file path
-  ctgov_load_duckdb_file(file.path("ctgov-derived.duckdb"))
-  endpoints = ctgov_query_endpoint()
 
   shinyApp(
     # Define UI

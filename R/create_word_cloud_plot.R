@@ -12,7 +12,7 @@
 #' If this parameter is empty, only the first 1000 studies are considered.
 #' @importFrom dplyr select
 #' @importFrom tm Corpus VectorSource tm_map content_transformer stopwords
-#' @importFrom tm TermDocumentMatrix
+#' @importFrom tm TermDocumentMatrix removeNumbers removePunctuation stripWhitespace removeWords
 #' @importFrom wordcloud2 wordcloud2
 #' @importFrom utils head
 #' @returns Displays a word cloud plot representing the frequency of words

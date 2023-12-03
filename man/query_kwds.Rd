@@ -21,8 +21,8 @@ query_kwds(tbl, kwds, column, ignore_case = TRUE, match_all = FALSE)
 A filtered dataset based on the constructed SQL query.
 }
 \description{
-This function constructs an SQL query for filtering a dataset based on keyword search criteria applied to a specific column.
+This function construct dplyr query for filtering a dataset based on keyword search criteria applied to a specific column.
 }
 \details{
-Construct SQL query for Filtering
+Construct  dplyr query for Filtering
 }

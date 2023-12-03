@@ -28,7 +28,7 @@ Core Functionality: The core of the bis620.2022 lies the `start_shiny` function.
 
 You can install the development version of bis620.2023 from [GitHub](https://github.com/) with:
 
-``` r
+```r
 # install.packages("devtools")
 devtools::install_github("YRblack/bis620.2023")
 ```

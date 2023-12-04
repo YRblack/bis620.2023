@@ -33,6 +33,7 @@ devtools::install_github("YRblack/bis620.2023")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This is an example which we use in the shinyapp to show different phases
+of studies:
 
 <img src="man/figures/README-example-1.png" width="100%" />

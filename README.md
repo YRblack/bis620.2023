@@ -29,19 +29,10 @@ You can install the development version of bis620.2023 from
 ``` r
 # install.packages("devtools")
 devtools::install_github("YRblack/bis620.2023")
-#> Skipping install of 'bis620.2023' from a github remote, the SHA1 (b71daf54) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 ```
 
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(bis620.2023)
-accel |> 
-  head(100) |> 
-  plot_accel()
-```
 
 <img src="man/figures/README-example-1.png" width="100%" />

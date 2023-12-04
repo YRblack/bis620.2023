@@ -37,10 +37,11 @@ devtools::install_github("YRblack/bis620.2023")
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r, example, warning=FALSE, message=FALSE, echo=FALSE}
 library(bis620.2023)
-accel |> 
-  head(100) |> 
-  plot_accel()
+bis620.2023:::create_phase_histogram_plot( studies = studies,
+                                       sponsor_type = 1,
+                                       status_type = 1,
+                                       brief_title_kw = ""
+  )
 ```
-

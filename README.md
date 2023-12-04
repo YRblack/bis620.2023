@@ -37,3 +37,8 @@ This is an example which we use in the shinyapp to show different phases
 of studies:
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+## Test Coverage
+
+Click the link below to see details of test coverage:  
+<https://app.codecov.io/github/YRblack/bis620.2023/tree/main/R>

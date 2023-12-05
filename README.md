@@ -36,6 +36,15 @@ devtools::install_github("YRblack/bis620.2023")
 This is an example which we use in the shinyapp to show different phases
 of studies:
 
+``` r
+library(bis620.2023)
+bis620.2023:::create_phase_histogram_plot( studies = studies,
+                                       sponsor_type = 1,
+                                       status_type = 1,
+                                       brief_title_kw = ""
+  )
+```
+
 <img src="man/figures/README-example-1.png" width="100%" />
 
 ## Test Coverage
